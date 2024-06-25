@@ -18,19 +18,19 @@ jobs:
 
       - name: Install dependencies
         run: |
-          cd MLOPS_DEPLOYMENT
+          cd MLOps_Deployment
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install cml
 
       - name: Train the model
         run: |
-          cd MLOPS_DEPLOYMENT
+          cd MLOps_Deployment
           python Rainfall_prediction.py
 
       - name: Save the trained models
         run: |
-          cd MLOPS_DEPLOYMENT
+          cd MLOps_Deployment
           mkdir -p models
           mv model_vavuniya.joblib models/
           mv model_anuradhapura.joblib models/
@@ -39,7 +39,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          cd MLOPS_DEPLOYMENT
+          cd MLOps_Deployment
           docker build -t rainfall-prediction-app:latest .
 
       - name: Run Docker container
