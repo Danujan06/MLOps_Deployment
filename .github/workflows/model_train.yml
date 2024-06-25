@@ -23,7 +23,7 @@ jobs:
 
       - name: Train the model
         run: |
-          python Rainfall_prediction.py
+          python rainfall_prediction.py
 
       - name: Save the trained models
         run: |
